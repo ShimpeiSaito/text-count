@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-if ARGV.size != 1
+unless ARGV.size == 1
   puts 'Error... Please specify arguments.'
   exit
 end
@@ -14,8 +14,7 @@ end
 
 sum = 0
 File.foreach(file) do |line|
-  f_line = line.gsub(/\s/, '')
-  sum += f_line.length
+  sum += line.gsub(/\s/, '').length
 end
 
 puts sum
